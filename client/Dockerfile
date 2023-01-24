@@ -1,5 +1,9 @@
 FROM node:alpine
 
+# Variables de entorno necesarias para ejecutar React desde un docker container
+ENV CI=true
+ENV WDS_SOCKET_PORT=0
+
 WORKDIR /app
 COPY ./package.json ./
 RUN npm install
